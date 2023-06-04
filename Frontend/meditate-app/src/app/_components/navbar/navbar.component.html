@@ -1,29 +1,27 @@
 <nav class="mobile-bottom-nav">
-	<div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
+	<div class="mobile-bottom-nav__item mobile-bottom-nav__" [routerLink]="['/']">
 		<div class="mobile-bottom-nav__item-content">
 			<span class="material-symbols-outlined material-icons">
 				home
 			</span>Home
-			<!-- <i class="material-icons">home</i>
-			Home -->
 		</div>		
 	</div>
-    <div class="mobile-bottom-nav__item">		
+    <div class="mobile-bottom-nav__item" [routerLink]="['/products']">		
         <div class="mobile-bottom-nav__item-content">
 			<span class="material-symbols-outlined material-icons">
 				self_improvement
-				</span>Meditate
-          <!-- <i class="material-icons">library_books</i>
-          Meditate -->
+			</span>Meditate
         </div>
-      </div>
+    </div>
       
-	<!-- <div class="mobile-bottom-nav__item">
+	<!--Account signup-->
+
+	<div class="mobile-bottom-nav__item">
 		<div class="mobile-bottom-nav__item-content">
 			<span class="material-symbols-outlined material-icons">
 				account_circle
 				</span>Account
 		</div>		
-	</div> -->
+	</div>
 
 </nav>

@@ -10,21 +10,21 @@ import { MeditationService } from '../../_services/meditation.service';
 export class ProductsComponent implements OnInit {
   meditations: Meditation[] = [];
 
-  constructor(private meditationService: MeditationService) { }
+  // constructor(private meditationService: MeditationService) { }
 
   ngOnInit(): void {
-    this.getMeditations();
+    // this.getMeditations();
   }
 
-  getMeditations(): void {
-    this.meditationService.getMeditations()
-      .subscribe(
-        data => {
-          this.meditations = data;
-        },
-        error => {
-          console.log(error);
-        }
-      );
-  }
+  // getMeditations(): void {
+  //   this.meditationService.getMeditations()
+  //     .subscribe(
+  //       data => {
+  //         this.meditations = data;
+  //       },
+  //       error => {
+  //         console.log(error);
+  //       }
+  //     );
+  // }
 }

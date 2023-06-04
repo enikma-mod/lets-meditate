@@ -35,10 +35,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
   }
-  &__item--active {
-    //dev
-    /* color: red; */
-  }
+
   &__item-content {
     display: flex;
     flex-direction: column;
@@ -46,7 +43,7 @@ h1 {
 }
 
 .material-icons {
-  font-size: 30px;
+  font-size: 35px;
   cursor: pointer;
 }
 
