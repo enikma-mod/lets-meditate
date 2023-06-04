@@ -7,11 +7,11 @@ module.exports = (sequelize, Sequelize) => {
       description: {
         type: Sequelize.STRING
       },
-      duration_minutes: {
-        type: Sequelize.INTEGER
-      },
-      image_url: {
+      image: {
         type: Sequelize.STRING
+      },
+      duration: {
+        type: Sequelize.INTEGER
       }
     });
   

@@ -6,10 +6,10 @@ module.exports = app => {
     // Create a new Tutorial
     router.post("/", meditations.create);
   
-    // Retrieve all meditations
+    // Retrieve all meditationss
     router.get("/", meditations.findAll);
   
-    // Retrieve all published meditations
+    // Retrieve all published meditationss
     router.get("/published", meditations.findAllPublished);
   
     // Retrieve a single Tutorial with id
@@ -22,7 +22,7 @@ module.exports = app => {
     router.delete("/:id", meditations.delete);
   
     // Create a new Tutorial
-    // router.delete("/", meditations.deleteAll);
+    // router.delete("/", meditationss.deleteAll);
   
-    app.use('/api/meditations', router);
+    app.use('/api/meditations_categories', router);
   };

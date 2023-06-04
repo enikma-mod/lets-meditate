@@ -1,26 +1,44 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const app = express()
-const db = require('./queries')
-const port = 3000
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
 
-app.use(bodyParser.json())
-app.use(
-  bodyParser.urlencoded({
-    extended: true,
+const app = express();
+
+
+
+var corsOptions = {
+  origin: "*"
+};
+
+const db = require("./app/models");
+db.sequelize.sync()
+  .then(() => {
+    console.log("Connected to the database!");
   })
-)
+  .catch((err) => {
+    console.log("Failed to sync db: " + err.message);
+  })
 
-app.get('/', (request, response) => {
-  response.json({ info: 'Node.js, Express, and Postgres API' })
-})
+app.use(cors(corsOptions));
 
-app.get('/categories', db.getUsers)
-app.get('/categories/:id', db.getUserById)
-app.post('/categories', db.createUser)
-app.put('/categories/:id', db.updateUser)
-app.delete('/categories/:id', db.deleteUser)
+// parse requests of content-type - application/json
+app.use(bodyParser.json());
 
-app.listen(port, () => {
-  console.log(`App running on port ${port}.`)
-})
+// parse requests of content-type - application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// simple route
+app.get("/", (req, res) => {
+  res.json({ message: "Let's meditate" });
+});
+
+
+require("./app/routes/meditation.routes")(app);
+
+
+// set port, listen for requests
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
+});
+

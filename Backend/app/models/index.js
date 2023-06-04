@@ -19,7 +19,6 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-//meditation model
 db.meditations = require("./meditations.model.js")(sequelize, Sequelize);
 
 module.exports = db;
