@@ -29,7 +29,7 @@ h1 {
   &__item {
     flex-grow: 1;
     text-align: center;
-    font-size: 12px;
+    font-size: 15px;
 
     display: flex;
     flex-direction: column;
@@ -45,9 +45,12 @@ h1 {
   }
 }
 
-
+.material-icons {
+  font-size: 30px;
+  cursor: pointer;
+}
 
 .material-icons:hover {
   transform: scale(1.1);
-  transition: 0.3s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
