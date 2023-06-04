@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import {Meditation} from '../../_interface/meditation';
-import {MeditationService} from '../../_services/meditation.service'
+import { Meditation } from '../../_interface/meditation';
+import { MeditationService } from '../../_services/meditation.service';
 
 @Component({
-  selector: 'app-meditations',
-  templateUrl: './meditations.component.html',
-  styleUrls: ['./meditations.component.css']
+  selector: 'app-products',
+  templateUrl: './products.component.html',
+  styleUrls: ['./products.component.scss']
 })
-export class MeditationsComponent implements OnInit {
-  meditations: Meditation[] = []; 
+export class ProductsComponent implements OnInit {
+  meditations: Meditation[] = [];
 
   constructor(private meditationService: MeditationService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getMeditations();
   }
 
@@ -27,5 +27,4 @@ export class MeditationsComponent implements OnInit {
         }
       );
   }
-
 }

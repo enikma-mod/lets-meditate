@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MeditationService {
-  private baseUrl = 'http://localhost:8080/api/meditations'; // Replace with your server URL
+  private baseUrl = 'http://localhost:3000/api/meditations'; // Replace with your server URL
 
   constructor(private http: HttpClient) { }
 
