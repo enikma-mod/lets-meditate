@@ -1,30 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { Meditation } from '../../_interface/meditation';
-import { MeditationService } from '../../_services/meditation.service';
+import { MeditationsService } from 'src/app/_services/meditations.service';
+
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
-export class ProductsComponent implements OnInit {
-  meditations: Meditation[] = [];
+export class ProductsComponent{
+  meditations: any;
 
-  // constructor(private meditationService: MeditationService) { }
+  constructor(public medService: MeditationsService) { }
 
-  ngOnInit(): void {
-    // this.getMeditations();
+  ngOnInit(){
+    this.getMeditations();
   }
 
-  // getMeditations(): void {
-  //   this.meditationService.getMeditations()
-  //     .subscribe(
-  //       data => {
-  //         this.meditations = data;
-  //       },
-  //       error => {
-  //         console.log(error);
-  //       }
-  //     );
-  // }
+  getMeditations(): void {
+    this.medService.getMeditations().subscribe({
+      next: (data: any) => {
+          this.meditations = data;
+        },
+        error: (err: any) => {
+          
+        }
+  });
+  }
 }

@@ -15,14 +15,14 @@
 
 
 module.exports = {
-  HOST: "localhost",
-  USER: "postgres",
-  PASSWORD: "12345",
-  DB: "meditationapp",
+  HOST: 'localhost',
+  USER: 'postgres',
+  PASSWORD: 'Letsdoit!',
+  DB: 'meditationsApp',
   port: 5432,
-  dialect: "postgres",
+  dialect: 'postgres',
   pool: {
-    max: 5,
+    max: 15,
     min: 0,
     acquire: 30000,
     idle: 10000
