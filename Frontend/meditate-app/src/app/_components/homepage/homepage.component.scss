@@ -1,25 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;800&display=swap");
 
-body,
-html {
-	background: #000000;
-	padding: 0;
-	margin: 0;
-	padding-bottom: 6rem;
-	font-family: "Montserrat", sans-serif;
-	width: 100%;
-}
+// body,
+// html {
+// 	background: #000000;
+// 	padding: 0;
+// 	margin: 0;
+// 	padding-bottom: 6rem;
+// 	font-family: "Montserrat", sans-serif;
+// 	width: 100%;
+// }
+
+// * {
+// 	background-color: rgb(198, 232, 232);
+// }
+
+
 .container {
 	padding-bottom: 3rem;
 }
 
-/* img {
-	-webkit-box-reflect: below 5px
-	linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4));
-	-webkit-transition: all 0.5s ease;
-	-o-transition: all 0.5s ease;
-	transition: all 0.5s ease;
-} */
 
 
 .container img {
@@ -41,15 +40,15 @@ html {
 	position: relative;
 }
 
-.featured_wrapper img {
-    overflow: none;
-	width: 100vw;
-	height: 100vh;
-	-o-object-fit: cover;
-	object-fit: cover;
-	-o-object-position: top;
-	object-position: top;
-}
+// .featured_wrapper img {
+//     overflow: none;
+// 	width: 100vw;
+// 	height: 100vh;
+// 	-o-object-fit: cover;
+// 	object-fit: cover;
+// 	-o-object-position: top;
+// 	object-position: top;
+// }
 
 .title_wrapper {
 	/* margin-bottom: 100px; */
@@ -86,7 +85,7 @@ button:hover {
 .icon-heading {
 	font-size: 30px;
 	font-weight: 600;
-	margin-top: 300px;
+	// margin-top: 300px;
 	text-align: center;
 }
 

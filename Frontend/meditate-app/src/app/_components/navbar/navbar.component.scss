@@ -14,7 +14,7 @@ h1 {
   left: 0;
   right: 0;
   z-index: 1000;
-  font-size: 14px;
+  font-size: 12px;
   //give nav it's own compsite layer
   will-change: transform;
   transform: translateZ(0);
@@ -32,7 +32,7 @@ h1 {
   &__item {
     flex-grow: 1;
     text-align: center;
-    font-size: 15px;
+    font-size: 12px;
 
     display: flex;
     flex-direction: column;
@@ -46,7 +46,7 @@ h1 {
 }
 
 .material-icons {
-  font-size: 35px;
+  font-size: 30px;
   cursor: pointer;
 }
 

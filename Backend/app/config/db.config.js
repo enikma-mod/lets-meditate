@@ -18,7 +18,7 @@ module.exports = {
   HOST: 'localhost',
   USER: 'postgres',
   PASSWORD: 'Letsdoit!',
-  DB: 'meditationsApp',
+  DB: 'meditationsapp',
   port: 5432,
   dialect: 'postgres',
   pool: {
