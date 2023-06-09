@@ -66,7 +66,7 @@
   	color: white;
 }
 button {
-	background: #B0C4DE;
+	background: #6CB4EE;
 	color: #fff !important;
 	font-size: 18px;
 	padding: 0.5rem 3rem;
@@ -87,12 +87,22 @@ button:hover {
 	font-weight: 600;
 	// margin-top: 300px;
 	text-align: right;
+	text-transform: uppercase;
+	color: #494F55;
 }
 
-/* .color-h1 {
-	color: rgb(34,193,195);
+.color-h1 {
+	color: #6CB4EE;
 }
 
-.color-h2 {
-	color: #FFBF00;
-} */
+
+
+//COLOR BRUSH EFFECT
+.color-brush {
+	/* background-image: linear-gradient(45deg, #ff00ff, #00ff00, #0000ff); */
+	background-image: linear-gradient(45deg, #7CB9E8, #00308F, #7FFFD4, #89CFF0, #B2FFFF);
+	background-clip: text;
+	-webkit-background-clip: text; /* For Safari/Chrome */
+	color: transparent;
+}
+
