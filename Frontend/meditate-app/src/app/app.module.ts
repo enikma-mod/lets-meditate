@@ -8,6 +8,7 @@ import { NavbarComponent } from './_components/navbar/navbar.component';
 import { HomepageComponent } from './_components/homepage/homepage.component';
 import { ProductsComponent } from './_components/products/products.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { MeditationDetailsComponent } from './_components/meditation-details/meditation-details.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
     NavbarComponent,
     HomepageComponent,
     ProductsComponent,
+    MeditationDetailsComponent,
   ],
   imports: [
     BrowserModule,

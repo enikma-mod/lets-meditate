@@ -1,81 +1,9 @@
-// const pool = require('./db');
-
-// const getCategories = (request, response) => {
-//   pool.query('SELECT * FROM categories ORDER BY id ASC', (error, results) => {
-//     if (error) {
-//       throw error;
-//     }
-//     response.status(200).json(results.rows);
-//   });
-// };
-
-// const getCategoryById = (request, response) => {
-//   const id = parseInt(request.params.id);
-
-//   pool.query('SELECT * FROM categories WHERE id = $1', [id], (error, results) => {
-//     if (error) {
-//       throw error;
-//     }
-//     response.status(200).json(results.rows);
-//   });
-// };
-
-// const createCategory = (request, response) => {
-//   const { title, description, duration, image } = request.body;
-
-//   pool.query(
-//     'INSERT INTO categories (title, description, duration, image) VALUES ($1, $2, $3, $4)',
-//     [title, description, duration, image],
-//     (error, results) => {
-//       if (error) {
-//         throw error;
-//       }
-//       response.status(201).send(`Category added with ID: ${results.insertId}`);
-//     }
-//   );
-// };
-
-// const updateCategory = (request, response) => {
-//   const id = parseInt(request.params.id);
-//   const { title, description, duration, image } = request.body;
-
-//   pool.query(
-//     'UPDATE categories SET title = $1, description = $2, duration = $3, image = $4 WHERE id = $5',
-//     [title, description, duration, image, id],
-//     (error, results) => {
-//       if (error) {
-//         throw error;
-//       }
-//       response.status(200).send(`Category modified with ID: ${id}`);
-//     }
-//   );
-// };
-
-// const deleteCategory = (request, response) => {
-//   const id = parseInt(request.params.id);
-
-//   pool.query('DELETE FROM categories WHERE id = $1', [id], (error, results) => {
-//     if (error) {
-//       throw error;
-//     }
-//     response.status(200).send(`Category deleted with ID: ${id}`);
-//   });
-// };
-
-// module.exports = {
-//   getCategories,
-//   getCategoryById,
-//   createCategory,
-//   updateCategory,
-//   deleteCategory,
-// };
-
-
 const db = require("../models");
 const Meditation = db.meditations;
 const Op = db.Sequelize.Op;
 
 // Create and Save a new Tutorial
+
 exports.create = (req, res) => {
   // Validate request
   if (!req.body.title) {
@@ -86,11 +14,13 @@ exports.create = (req, res) => {
   }
 
   // Create a meditation
+  // @POST
   const meditation = {
     title: req.body.title,
     description: req.body.description,
     image: req.body.image,
     duration: req.body.duration
+    //URL SOUNDS 
   };
 
   // Save Tutorial in the database
@@ -107,6 +37,7 @@ exports.create = (req, res) => {
 };
 
 // Retrieve all Tutorials from the database.
+// @GET
 exports.findAll = (req, res) => {
   const title = req.query.title;
   var condition = title ? { title: { [Op.iLike]: `%${title}%` } } : null;
@@ -124,6 +55,7 @@ exports.findAll = (req, res) => {
 };
 
 // Find a single Tutorial with an id
+// @GET BY ID
 exports.findOne = (req, res) => {
   const id = req.params.id;
 
@@ -145,6 +77,7 @@ exports.findOne = (req, res) => {
 };
 
 // Update a Tutorial by the id in the request
+// @UPDATE / PUT
 exports.update = (req, res) => {
   const id = req.params.id;
 
@@ -170,6 +103,7 @@ exports.update = (req, res) => {
 };
 
 // Delete a Tutorial with the specified id in the request
+// @DELETE
 exports.delete = (req, res) => {
   const id = req.params.id;
 
@@ -194,10 +128,6 @@ exports.delete = (req, res) => {
     });
 };
 
-// Delete all Tutorials from the database.
-// exports.deleteAll = (req, res) => {
-  
-// };
 
 // Find all published Tutorials
 exports.findAllPublished = (req, res) => {
