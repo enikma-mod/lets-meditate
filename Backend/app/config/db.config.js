@@ -17,8 +17,20 @@
 module.exports = {
   HOST: 'localhost',
   USER: 'postgres',
-  PASSWORD: 'Letsdoit!',
-  DB: 'meditationsapp',
+  //DA PASSWORD
+  // PASSWORD: 'Letsdoit!', 
+
+  //Personal PC PASSWORD
+  PASSWORD: '12345', 
+
+  //DA SHELL DATABASE
+  DB: 'meditationapp',
+
+  //DA SHELL DATABASE
+  // DB: 'meditationsapp', 
+
+   
+
   port: 5432,
   dialect: 'postgres',
   pool: {

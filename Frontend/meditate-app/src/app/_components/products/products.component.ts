@@ -27,4 +27,7 @@ export class ProductsComponent{
         }
   });
   }
+
+  cardBackgroundColors: string[] = ["#F4D9D8", "#F4D9D8", "#F4D9D8", "#F4D9D8", "#F4D9D8"]; // Add more colors as desired
+
 }

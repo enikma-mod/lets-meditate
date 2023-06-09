@@ -54,3 +54,20 @@ h1 {
   transform: scale(1.1);
   transition: 0.1s ease-in-out;
 }
+
+
+
+/* Default icon color */
+.material-icons {
+  color: black;
+}
+
+/* Active icon color */
+.mobile-bottom-nav__item.active .material-icons {
+  color: black;
+}
+
+
+
+
+
