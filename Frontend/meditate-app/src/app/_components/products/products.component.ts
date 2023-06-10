@@ -29,6 +29,6 @@ export class ProductsComponent{
   }
 
   //using ngclass to change background color for each card
-  cardBackgroundColors: string[] = ["#B0C4DE", "#DDA0DD", "#FBCEB1", "#F0E68C"]; // Add more colors as desired
-
+  cardBackgroundColors: string[] = ["#D8BFD8", "#B9D9EB", "#ACE1AF", "#F0E68C"]; // Add more colors as desired
+  
 }

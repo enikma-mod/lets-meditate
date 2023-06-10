@@ -17,8 +17,8 @@
   <p class="subheading-text">Choose a topic to focus on:</p>
   <div class="row">
       <div class="col-sm-3" *ngFor="let meditation of meditations; let i=index">
-          <div class="card mb-2" [style.background-color]="cardBackgroundColors[i]" [routerLink]="['/details', meditation.id]">
-              <img [src]="meditation.image" class="card-img-top" alt="" style="max-height: 180px;">
+          <div class="card mb-3" [style.background-color]="cardBackgroundColors[i]" [routerLink]="['/details', meditation.id]">
+              <img [src]="meditation.image" class="card-img-top" alt="" style="max-height: 160px;">
               <div class="card-body">
                   <h2 class="card-title">{{ meditation.title }}</h2>
               </div>

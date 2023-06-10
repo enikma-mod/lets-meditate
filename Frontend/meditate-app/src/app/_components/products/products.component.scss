@@ -5,13 +5,15 @@
     max-width: 50%;
   }
   .card-img-top {
-    /* height: 200px; */
-    // object-fit: cover;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 12px;
   }
 
   .card-title {
     font-size: 17px;
     color: #494F55;
+    /* color: black; */
     font-weight: 700;
     overflow: scroll;
     text-transform: uppercase;
@@ -36,7 +38,7 @@
 
   .category-heading {
     text-transform: uppercase;
-    margin-top: 12px;
+    margin-top: 10px;
     text-align: center;
     font-size: 25px;
     font-weight: 700;

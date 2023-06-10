@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Meditation } from 'src/app/_interface/meditation';
 import { MeditationsService } from 'src/app/_services/meditations.service';
-import { Howl } from 'howler';
 
 
 
@@ -11,11 +10,13 @@ import { Howl } from 'howler';
   templateUrl: './meditation-details.component.html',
   styleUrls: ['./meditation-details.component.scss']
 })
-export class MeditationDetailsComponent implements OnInit {
+export class MeditationDetailsComponent implements OnInit, OnDestroy {
   
   meditations: any;
-  timer: any;
-  isTimerRunning: boolean = false;
+  timerRunning: boolean = false;
+  minutes: number = 0;
+  seconds: number = 0;
+  private timer: any;
 
   constructor (private route: ActivatedRoute, private meditationsService: MeditationsService
   ) { }
@@ -40,45 +41,30 @@ export class MeditationDetailsComponent implements OnInit {
         );
     }
   }
-  
-
-  loadSound() {
-    this.meditations.soundFile = new Howl({
-      src: [this.meditations.sounds],
-      html5: true
-    });
-  }
 
   startTimer() {
-    if (!this.isTimerRunning) {
-      this.isTimerRunning = true;
-      this.timer = setInterval(() => {
-        // Timer logic goes here
-      }, 1000);
-    }
+    this.timerRunning = true;
+    this.timer = setInterval(() => {
+      this.seconds++;
+      if (this.seconds === 60) {
+        this.minutes++;
+        this.seconds = 0;
+      }
+    }, 1000);
   }
 
   stopTimer() {
-    if (this.isTimerRunning) {
-      clearInterval(this.timer);
-      this.isTimerRunning = false;
-    }
+    this.timerRunning = false;
+    clearInterval(this.timer);
+    alert(`You meditated for ${this.minutes} minutes.`);
   }
 
-  playSound() {
-    if (this.meditations.soundFile) {
-      this.meditations.soundFile.play();
-    }
+  ngOnDestroy() {
+    clearInterval(this.timer);
   }
-  
-  stopSound() {
-    if (this.meditations.soundFile) {
-      this.meditations.soundFile.stop();
-    }
-  }
-
- 
-  
   
 
 }
+  
+
+ 

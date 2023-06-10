@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+button {
+  margin-bottom: 10px;
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #4286f4;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.timer {
+  margin-top: 10px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #4286f4;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: rotate 4s linear infinite;
+}
+
+.rotate {
+  animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

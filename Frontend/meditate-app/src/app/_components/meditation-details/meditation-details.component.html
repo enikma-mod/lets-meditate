@@ -2,9 +2,20 @@
 <div *ngIf="meditations">
     <h1>{{ meditations.title }}</h1>
     <p>{{ meditations.description }}</p>
-    <img [src]="meditations.image" alt="" style="max-height: 180px;">
-    <p>Duration: {{ meditations.duration }}</p>
-    <button (click)="startTimer()">Start Timer {{meditations.sounds}}</button>
-    <button (click)="stopTimer()">Stop Timer</button>
+    <!-- <img [src]="meditations.image" alt="" style="max-height: 180px;"> -->
+    <!-- <p>Duration: {{ meditations.duration }}</p>
+    <button (click)="startTimer()">Start Timer: {{meditations.sounds}}</button>
+    <button (click)="stopTimer()">Stop Timer</button> -->
+   
+
+</div>
+  
+    
+<div style="display: flex; justify-content: center; align-items: center; height: 50vh;">
+  <div class="container">
+    <button (click)="startTimer()" [disabled]="timerRunning">Start</button>
+    <button (click)="stopTimer()" [disabled]="!timerRunning">Stop</button>
+    <div class="timer" [ngClass]="{ 'rotate': timerRunning }">{{ minutes }}:{{ seconds }}</div>
   </div>
   
+</div>
