@@ -12,6 +12,9 @@ module.exports = (sequelize, Sequelize) => {
       },
       duration: {
         type: Sequelize.INTEGER
+      },
+      sounds: {
+        type: Sequelize.STRING
       }
     });
   

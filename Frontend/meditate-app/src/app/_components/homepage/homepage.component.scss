@@ -15,6 +15,8 @@
 // }
 
 
+
+
 .container {
 	padding-bottom: 3rem;
 }
@@ -83,13 +85,19 @@ button:hover {
 }
 
 .icon-heading {
-	font-size: 30px;
+	font-size: 32px;
 	font-weight: 600;
 	// margin-top: 300px;
-	text-align: right;
+	text-align: center;
 	text-transform: uppercase;
 	color: #494F55;
 }
+
+/* #h1-color {
+	color: white;
+	font-size: 40px;
+} */
+
 
 .color-h1 {
 	color: #6CB4EE;

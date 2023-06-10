@@ -3,5 +3,6 @@ export interface Meditation {
     title: String,
     description: String,
     image: String,
-    duration: String
+    duration: String,
+    sounds: String
 }

@@ -19,7 +19,8 @@ exports.create = (req, res) => {
     title: req.body.title,
     description: req.body.description,
     image: req.body.image,
-    duration: req.body.duration
+    duration: req.body.duration,
+    sounds: req.body.sounds
     //URL SOUNDS 
   };
 
