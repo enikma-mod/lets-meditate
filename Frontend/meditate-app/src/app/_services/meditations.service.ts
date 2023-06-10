@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Howl } from 'howler';
+
+
 
 const baseUrl = 'http://localhost:3000/api/meditations_categories';
 

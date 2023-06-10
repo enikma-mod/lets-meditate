@@ -9,6 +9,7 @@ import { HomepageComponent } from './_components/homepage/homepage.component';
 import { ProductsComponent } from './_components/products/products.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { MeditationDetailsComponent } from './_components/meditation-details/meditation-details.component';
+import { MeditationsService } from './_services/meditations.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { MeditationDetailsComponent } from './_components/meditation-details/med
     AppRoutingModule,
     HttpClientModule  
   ],
-  providers: [],
+  providers: [MeditationsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,1 +1,10 @@
-<p>meditation-details works!</p>
+
+<div *ngIf="meditations">
+    <h1>{{ meditations.title }}</h1>
+    <p>{{ meditations.description }}</p>
+    <img [src]="meditations.image" alt="" style="max-height: 180px;">
+    <p>Duration: {{ meditations.duration }}</p>
+    <button (click)="startTimer()">Start Timer {{meditations.sounds}}</button>
+    <button (click)="stopTimer()">Stop Timer</button>
+  </div>
+  
