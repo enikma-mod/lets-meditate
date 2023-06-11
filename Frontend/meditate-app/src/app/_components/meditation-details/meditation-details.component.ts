@@ -10,19 +10,19 @@ import { MeditationsService } from 'src/app/_services/meditations.service';
   templateUrl: './meditation-details.component.html',
   styleUrls: ['./meditation-details.component.scss']
 })
-export class MeditationDetailsComponent implements OnInit, OnDestroy {
+export class MeditationDetailsComponent implements OnInit {
   
   meditations: any;
-  timerRunning: boolean = false;
-  minutes: number = 0;
-  seconds: number = 0;
-  private timer: any;
+
+ 
 
   constructor (private route: ActivatedRoute, private meditationsService: MeditationsService
   ) { }
   
   ngOnInit() {
     this.getMeditationDetails();
+
+
   }
 
   getMeditationDetails() {
@@ -42,29 +42,7 @@ export class MeditationDetailsComponent implements OnInit, OnDestroy {
     }
   }
 
-  startTimer() {
-    this.timerRunning = true;
-    this.timer = setInterval(() => {
-      this.seconds++;
-      if (this.seconds === 60) {
-        this.minutes++;
-        this.seconds = 0;
-      }
-    }, 1000);
-  }
 
-  stopTimer() {
-    this.timerRunning = false;
-    clearInterval(this.timer);
-    alert(`You meditated for ${this.minutes} minutes.`);
-  }
 
-  ngOnDestroy() {
-    clearInterval(this.timer);
-  }
   
-
 }
-  
-
- 

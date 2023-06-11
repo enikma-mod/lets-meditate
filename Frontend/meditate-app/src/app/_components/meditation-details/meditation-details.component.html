@@ -1,21 +1,39 @@
-
-<div *ngIf="meditations">
-    <h1>{{ meditations.title }}</h1>
-    <p>{{ meditations.description }}</p>
-    <!-- <img [src]="meditations.image" alt="" style="max-height: 180px;"> -->
-    <!-- <p>Duration: {{ meditations.duration }}</p>
-    <button (click)="startTimer()">Start Timer: {{meditations.sounds}}</button>
-    <button (click)="stopTimer()">Stop Timer</button> -->
-   
-
-</div>
-  
-    
-<div style="display: flex; justify-content: center; align-items: center; height: 50vh;">
-  <div class="container">
-    <button (click)="startTimer()" [disabled]="timerRunning">Start</button>
-    <button (click)="stopTimer()" [disabled]="!timerRunning">Stop</button>
-    <div class="timer" [ngClass]="{ 'rotate': timerRunning }">{{ minutes }}:{{ seconds }}</div>
+<div class="container">
+  <div *ngIf="meditations" class="centered">
+    <h1 class="heading-h1">{{ meditations.title }}</h1>
+    <div class="quote-box">
+      <p class="quotes">{{meditations.quotes}}</p>
+    </div>
   </div>
-  
+
+<div id="pomodoro">
+  <div id="clock">
+    <div id="timer">
+      <div id="title">Ready?</div>
+      <div id="countdown">
+        <span id="minutes">30</span>
+        <span id="seconds">00</span>
+      </div>
+      <img src={{meditations.image}} alt="" style="width:60px; height: 60px; border-radius: 30px;">
+
+      <div id="controls" class="reset">
+        <div id="start"><i class="fas fa-play"></i> Start</div>
+        <div id="pause"><i class="fas fa-pause"></i> Pause</div>
+        <div id="reset"><i class="fas fa-sync-alt"></i> Reset</div>
+      </div>
+    </div>
+  </div>
+  <div id="options">
+    <div id="session">
+      <i id="incrSession" class="fas fa-angle-double-up"></i>
+      <span class="option-title">Session</span>
+      <input id="sessionInput" type="number" value="30" max="60" min="5">
+      <i id="decrSession" class="fas fa-angle-double-down"></i>
+    </div>
+    
+  </div>
 </div>
+</div>
+
+
+

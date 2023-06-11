@@ -15,6 +15,10 @@ module.exports = (sequelize, Sequelize) => {
       },
       sounds: {
         type: Sequelize.STRING
+      },
+      quotes: {
+        type: Sequelize.STRING
+
       }
     });
   

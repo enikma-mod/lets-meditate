@@ -8,9 +8,6 @@
 //   port: 5432,
 // });
 
-
-
-
 // module.exports = pool;
 
 
@@ -23,13 +20,12 @@ module.exports = {
   //Personal PC PASSWORD
   PASSWORD: '12345', 
 
-  //DA SHELL DATABASE
+  //PERSONAL PGADMIN DATABASE
   DB: 'meditationapp',
 
   //DA SHELL DATABASE
   // DB: 'meditationsapp', 
 
-   
 
   port: 5432,
   dialect: 'postgres',

@@ -1,4 +1,3 @@
-import { Howl } from "howler";
 
 export interface Meditation {
     id: any;
@@ -7,6 +6,6 @@ export interface Meditation {
     image: string;
     duration: string;
     sounds: string;
-    soundFile?: Howl;
+    quotes: string;
   }
   
