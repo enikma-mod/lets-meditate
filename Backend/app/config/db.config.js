@@ -15,16 +15,16 @@ module.exports = {
   HOST: 'localhost',
   USER: 'postgres',
   //DA PASSWORD
-  // PASSWORD: 'Letsdoit!', 
+  PASSWORD: 'Letsdoit!', 
 
   //Personal PC PASSWORD
-  PASSWORD: '12345', 
+  // PASSWORD: '12345', 
 
   //PERSONAL PGADMIN DATABASE
-  DB: 'meditationapp',
+  // DB: 'meditationapp',
 
   //DA SHELL DATABASE
-  // DB: 'meditationsapp', 
+  DB: 'meditationsapp', 
 
 
   port: 5432,
