@@ -19,6 +19,10 @@ module.exports = (sequelize, Sequelize) => {
       quotes: {
         type: Sequelize.STRING
 
+      },
+      slogans: {
+        type: Sequelize.STRING
+
       }
     });
   

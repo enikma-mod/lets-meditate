@@ -7,5 +7,6 @@ export interface Meditation {
     duration: string;
     sounds: string;
     quotes: string;
+    slogans: string
   }
   

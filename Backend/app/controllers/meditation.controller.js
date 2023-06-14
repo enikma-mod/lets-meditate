@@ -21,7 +21,8 @@ exports.create = (req, res) => {
     image: req.body.image,
     duration: req.body.duration,
     sounds: req.body.sounds,
-    quotes: req.body.quotes
+    quotes: req.body.quotes,
+    slogans: req.body.slogans
     //URL SOUNDS 
   };
 
