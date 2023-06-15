@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Meditation } from 'src/app/_interface/meditation';
 import { MeditationsService } from 'src/app/_services/meditations.service';
@@ -41,8 +41,4 @@ export class MeditationDetailsComponent implements OnInit {
         );
     }
   }
-
-
-
-  
 }
