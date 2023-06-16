@@ -5,7 +5,12 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   host: dbConfig.HOST,
   dialect: dbConfig.dialect,
   operatorsAliases: false,
-
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false // You may need to adjust this option based on your SSL certificate configuration
+    }
+  },
   pool: {
     max: dbConfig.pool.max,
     min: dbConfig.pool.min,

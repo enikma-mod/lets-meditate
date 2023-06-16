@@ -10,11 +10,16 @@ import { MeditationsService } from 'src/app/_services/meditations.service';
 })
 export class ProductsComponent{
   meditations: any;
-
+  isLoading: boolean = true; // Add the isLoading property and set it to true initially
   constructor(public medService: MeditationsService) { }
 
   ngOnInit(){
     this.getMeditations();
+
+     // Simulate data loading
+     setTimeout(() => {
+      this.isLoading = false; // Set isLoading to false once the data is loaded
+    }, 2000);
   }
 
   getMeditations(): void {
@@ -29,6 +34,6 @@ export class ProductsComponent{
   }
 
   //using ngclass to change background color for each card
-  cardBackgroundColors: string[] = ["#D8BFD8", "#B9D9EB", "#ACE1AF", "#F0E68C"]; // Add more colors as desired
+  cardBackgroundColors: string[] = ["#B9D9EB", "#B9D9EB", "#B9D9EB", "#B9D9EB"]; // Add more colors as desired
   
 }
