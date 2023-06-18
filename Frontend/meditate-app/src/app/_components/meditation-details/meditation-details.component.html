@@ -1,39 +1,56 @@
+<body>
 <div class="container">
   <div *ngIf="meditations" class="centered">
     <h1 class="heading-h1">{{ meditations.title }}</h1>
     <div class="quote-box">
       <p class="quotes">{{meditations.quotes}}</p>
     </div>
-  </div>
 
-<div id="pomodoro">
-  <div id="clock">
-    <div id="timer">
-      <div id="title">Ready?</div>
-      <div id="countdown">
-        <span id="minutes">30</span>
-        <span id="seconds">00</span>
+    <!-- <div *ngIf="meditations" class="countdown-container">
+      <div class="countdown-timer">
+        <div class="timer-circle">
+          <img [src]=meditations.image alt="" style="width: 10px">
+
+          <div class="timer-circle-mask" [style.transform]="'rotate(' + calculateRotation() + 'deg)'"></div>
+          <div class="play-stop-icons">
+            <i class="fa fa-play" *ngIf="remainingTime === totalTime"></i>
+            <i class="fa fa-stop" *ngIf="remainingTime !== totalTime"></i>
+          </div>
+        </div>
+       
+        <div class="timer-text">00:{{ remainingTime }}</div>
       </div>
-      <img src={{meditations.image}} alt="" style="width:60px; height: 60px; border-radius: 30px;">
+    </div> -->
+  </div>
+</div>
 
-      <div id="controls" class="reset">
-        <div id="start"><i class="fas fa-play"></i> Start</div>
-        <div id="pause"><i class="fas fa-pause"></i> Pause</div>
-        <div id="reset"><i class="fas fa-sync-alt"></i> Reset</div>
+<div class="content" [class.move]="animate">
+  <div class="content-timer">
+   
+    <div class="content-m">
+      <div class="time">{{ minutes | number:'2.0'}} <span>m</span></div>
+      <div class="content-btn" *ngIf="show">
+        <button (click)="increment('M')"> + </button>
+        <button (click)="decrement('M')"> - </button>
+      </div>
+    </div>
+    <div class="content-s">
+      <div class="time">:{{seconds | number:'2.0'}} <span>s</span></div>
+      <div class="content-btn" *ngIf="show">
+        <button (click)="increment('S')"> + </button>
+        <button (click)="decrement('S')"> - </button>
       </div>
     </div>
   </div>
-  <div id="options">
-    <div id="session">
-      <i id="incrSession" class="fas fa-angle-double-up"></i>
-      <span class="option-title">Session</span>
-      <input id="sessionInput" type="number" value="30" max="60" min="5">
-      <i id="decrSession" class="fas fa-angle-double-down"></i>
-    </div>
-    
+  <div class="content-btn-action">
+    <button type="button" (click)="start()" [disabled]="disabled">&#9658;</button>
+    <button type="button" (click)="stop()">&#9724;</button>
+    <button type="button" (click)="reset()">&#8635;</button>
   </div>
 </div>
-</div>
 
+<audio #idAudio controls class="dnone">
+  <source type="audio/wav" src="../../../assets/sound/Sound The Alarm - TrackTribe.mp3">
+</audio>
 
 
