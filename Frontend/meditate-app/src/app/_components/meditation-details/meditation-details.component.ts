@@ -26,6 +26,7 @@ export class MeditationDetailsComponent implements OnInit {
   idAudio!: ElementRef;
 
   
+  
  
   constructor (private route: ActivatedRoute, private meditationsService: MeditationsService, 
   ) { }
@@ -55,43 +56,49 @@ export class MeditationDetailsComponent implements OnInit {
 
 
   increment(type: 'H' | 'M' | 'S') {
-    // if (type === 'H') {
-    //   if (this.hours >= 99) return;
-    //   this.hours += 1;
-    // }
+    
     if (type === 'M') {
-      if (this.minutes >= 59) return;
+      if (this.minutes >= 59) {
+        this.minutes = 0;
+        return;
+      }
       this.minutes += 1;
     }
     else {
-      if (this.seconds >= 59) return;
+      if (this.seconds >= 59) {
+        this.seconds = 0;
+        return;
+      }
       this.seconds += 1;
     }
   }
+
+
   decrement(type: 'H' | 'M' | 'S') {
-    // if (type === 'H') {
-    //   if (this.hours <= 0) return;
-    //   this.hours -= 1;
-    // }
+    
     if (type === 'M') {
-      if (this.minutes <= 0) return;
-      this.minutes -= 1;
+    if (this.minutes <= 0) {
+      this.minutes = 59;
+      return;
     }
-    else {
-      if (this.seconds <= 0) return;
-      this.seconds -= 1;
-    }
+    this.minutes -= 1;
   }
+  else {
+    if (this.seconds <= 0) {
+      this.seconds = 59;
+      return;
+    }
+    this.seconds -= 1;
+  }
+}
  
   updateTimer() {
-    // this.date.setHours(this.hours);
     this.date.setMinutes(this.minutes);
     this.date.setSeconds(this.seconds);
     this.date.setMilliseconds(0);
     const time = this.date.getTime();
     this.date.setTime(time - 1000);  //---
 
-    // this.hours = this.date.getHours();
     this.minutes = this.date.getMinutes();
     this.seconds = this.date.getSeconds();
 
@@ -107,7 +114,14 @@ export class MeditationDetailsComponent implements OnInit {
         this.idAudio.nativeElement.load();
       }, 5000);
 
+    } else if (this.date.getMinutes() === 0)  {
+      // Reset to 0 when the counter reaches -1 (previously 0)
+      this.date.setHours(0);
+      this.date.setMinutes(0);
+      this.date.setSeconds(0);
     }
+
+   
   }
 
   start() {
@@ -121,7 +135,7 @@ export class MeditationDetailsComponent implements OnInit {
         this.timer = setInterval(() => {
           this.updateTimer();
         }, 1000);
-      }     
+      }
     }
   }
 
@@ -139,5 +153,9 @@ export class MeditationDetailsComponent implements OnInit {
     this.seconds = 0;
     this.stop();
   }
+
+
+
+
   
 }

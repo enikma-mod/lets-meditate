@@ -25,5 +25,5 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.meditations = require("./meditations.model.js")(sequelize, Sequelize);
-
+// db.users = require("./users.model.js")(sequelize, Sequelize);
 module.exports = db;

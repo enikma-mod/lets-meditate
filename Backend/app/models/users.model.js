@@ -1,18 +1,16 @@
 // module.exports = (sequelize, Sequelize) => {
-//     const User = sequelize.define('User', {
-//       email: {
-//         type: Sequelize.STRING,
-//         allowNull: false,
-//         unique: true,
-//       },
-//       password: {
-//         type: Sequelize.STRING,
-//         allowNull: false,
-//       },
-//     }, {
-//       timestamps: false,
-//     });
-  
-//     return User;
+//   const User = sequelize.define("user", {
+//     username: {
+//       type: Sequelize.STRING
+//     },
+//     email: {
+//       type: Sequelize.STRING
+//     },
+//     password: {
+//       type: Sequelize.STRING
+//     }
+//     // Add any other fields you need for a user
+//   });
+
+//   return User;
 // };
-  

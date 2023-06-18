@@ -25,10 +25,12 @@
 </div>
 
 <div class="content" [class.move]="animate">
-  <div class="content-timer">
-   
+
+  <div class="content-timer" *ngIf="meditations">
+    
     <div class="content-m">
       <div class="time">{{ minutes | number:'2.0'}} <span>m</span></div>
+      
       <div class="content-btn" *ngIf="show">
         <button (click)="increment('M')"> + </button>
         <button (click)="decrement('M')"> - </button>
@@ -49,8 +51,11 @@
   </div>
 </div>
 
-<audio #idAudio controls class="dnone">
+<!-- <audio #idAudio controls class="dnone">
   <source type="audio/wav" src="../../../assets/sound/Sound The Alarm - TrackTribe.mp3">
-</audio>
+</audio> -->
+
+
+<audio id="natureSounds" src="https://joeweaver.me/codepenassets/freecodecamp/challenges/build-a-pomodoro-clock/forest.mp3" loop></audio>
 
 
