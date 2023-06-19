@@ -10,6 +10,7 @@ import { ProductsComponent } from './_components/products/products.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { MeditationDetailsComponent } from './_components/meditation-details/meditation-details.component';
 import { MeditationsService } from './_services/meditations.service';
+import { AudioPlayerComponent } from './_components/audio-player/audio-player.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { MeditationsService } from './_services/meditations.service';
     HomepageComponent,
     ProductsComponent,
     MeditationDetailsComponent,
+    AudioPlayerComponent,
   ],
   imports: [
     BrowserModule,
